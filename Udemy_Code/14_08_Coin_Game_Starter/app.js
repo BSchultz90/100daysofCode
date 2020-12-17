@@ -19,10 +19,17 @@ window.addEventListener("keyup", function (e) {
   } else if (e.key === "ArrowUp" || e.key === "Up") {
     const currTop = extractPos(avatar.style.top);
     avatar.style.top = `${currTop - 50}px`;
+  } else if (e.key === "ArrowRight" || e.key === "Right") {
+    const currLeft = extractPos(avatar.style.left);
+    avatar.style.top = `${currLeft + 50}px`;
+  } else if (e.key === "ArrowRight" || e.key === "Left") {
+    const currTop = extractPos(avatar.style.top);
+    avatar.style.top = `${currLeft - 50}px`;
   }
 });
 
 const extractPos = (pos) => {
-  if (!pos) return 0;
+  if (!pos) return 100;
   return parseInt(pos.slice(0, -2));
 };
+
