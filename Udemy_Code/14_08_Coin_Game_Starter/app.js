@@ -20,11 +20,11 @@ window.addEventListener('keyup', function (e) {
         const currTop = extractPos(avatar.style.top);
         avatar.style.top = `${currTop - 50}px`;
     } else if (e.key === 'ArrowRight' || e.key === 'Right') {
+        const currRight = extractPos(avatar.style.right);
+        avatar.style.right = `${currRight + 50}px`;
+    } else if (e.key === 'ArrowLeft' || e.key === 'Left') {
         const currLeft = extractPos(avatar.style.left);
-        avatar.style.top = `${currLeft + 50}px`;
-    } else if (e.key === 'ArrowRight' || e.key === 'Left') {
-        const currRight = extractPos(avatar.style.top);
-        avatar.style.top = `${currRight - 50}px`;
+        avatar.style.left = `${currLeft - 50}px`;
     }
 });
 
