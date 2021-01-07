@@ -16,4 +16,3 @@ fetch("https://swapi.dev/api/planets/")
     console.log("Something went wrong with Fetch");
     console.log(err);
   });
-console.log("Test Print");
