@@ -1,38 +1,19 @@
-// const firstReq = new XMLHttpRequest();
+fetch("https://swapi.dev/api/planets/")
+  .then((response) => {
+    if (!response.result) {
+      throw new Error(`Something went Wrong: Status Code${response.status}`);
 
-// firstReq.addEventListener("load", function () {
-//   console.log("IT WORKED!");
-//   data = JSON.parse(this.responseText);
-//   const filmUrl = data.results[0].films[0];
-//   const filmReq = new XMLHttpRequest();
-//   filmReq.addEventListener("load", function () {
-//     aNewHope = JSON.parse(this.responseText);
-//     console.log("Second Request Worked!");
-//     console.log(aNewHope);
-//   });
-//   filmReq.addEventListener("error", function (e) {
-//     console.log("ERROR!!!", e);
-//   });
-//   filmReq.open("GET", filmUrl);
-//   filmReq.send();
-//   //   for (let planet of data.results) {
-//   //     console.log(planet.name);
-//   //   }
-// });
-// firstReq.addEventListener("error", () => {
-//   console.log("Error!!");
-// });
-// firstReq.open("GET", "https://swapi.dev/api/planets/");
-// firstReq.send();
-
-fetch("https://swapi.dev/api/planets/").then((response) => {
-  if (!response.ok) {
-    console.log("ERRORR");
-  } else {
-    response.json().then((data) => {
-      for (let planet of data.results) {
-        console.log(planet.name);
-      }
-    });
-  }
-});
+      return response.json();
+    }
+  })
+  .then((data) => {
+    for (let planet of data.results) {
+      console.log(planet);
+      console.log(planet.name);
+    }
+  })
+  .catch((err) => {
+    console.log("Something went wrong with Fetch");
+    console.log(err);
+  });
+console.log("Test Print");
