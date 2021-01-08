@@ -18,7 +18,7 @@
 
 async function getPlanets() {
   try {
-    const res = await axios.get("https://swapi.dev/api/planedasfts/");
+    const res = await axios.get("https://swapi.dev/api/planes/");
     console.log(res);
   } catch (e) {
     console.log("IN CATCH!!!!", e);
