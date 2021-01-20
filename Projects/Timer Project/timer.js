@@ -1,3 +1,4 @@
+
 class Timer {
 	constructor(durationInput, startButton, pauseButton, callbacks) {
 		this.durationInput = durationInput;
@@ -17,7 +18,7 @@ class Timer {
 			this.onStart();
 		}
 		this.tick();
-		this.timer = setInterval(this.tick, 1000);
+		this.timer = setInterval(this.tick, 50);
 	};
 
 	pause = () => {
@@ -29,7 +30,7 @@ class Timer {
 	}
 
 	set timeRemaining(time) {
-		this.durationInput.value = time;
+		this.durationInput.value = time.toFixed(2);
 	}
 
 	tick = () => {
@@ -39,9 +40,9 @@ class Timer {
 				this.onComplete();
 			}
 		} else {
-			this.timeRemaining = this.timeRemaining - 1;
+			this.timeRemaining = this.timeRemaining - .05;
 			if (this.onTick) {
-				this.onTick();
+				this.onTick(this.timeRemaining);
 			}
 		}
 	};
