@@ -11,6 +11,7 @@ const fetchData = async (searchTerm) => {
 
   return response.data.Search;
 };
+const root = document.querySelector(".autocomplete");
 
 const input = document.querySelector("input");
 
