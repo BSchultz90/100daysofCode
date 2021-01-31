@@ -1,26 +1,31 @@
+// Create a function that gets a random number from 1 to 10
+
 function getNum() {
-	return Math.floor(Math.random() * 10) + 1;
+  return Math.floor(Math.random() * 10) + 1;
 }
-class NumPicker extends React.Component {
-	render() {
-		const num = getNum();
-		let msg;
-		if (num === 7) {
-			msg =
-				<div>
-					<h2>CONGRATS YOU WIN!</h2>
-					<img src="https://i.giphy.com/media/nXxOjZrbnbRxS/giphy.webp" />
-				</div>
-		} else {
-			msg = <p>Sorry You Lose!</p>
-		}
-		return (
-			<div>
-				<h1>Your number is: {num} </h1>
-				{msg}
-			</div>
-		);
-	}
+//Instantiate a React Component that calls get num
+
+class Numpicker extends React.Component {
+  render() {
+    const num = getNum();
+    let msg;
+
+    if (num === 7) {
+      msg = (
+        <div>
+          <h2>Congratulations You've Won!!!</h2>
+        </div>
+      );
+    } else {
+      msg = <p>I'm Sorry but you've lost you got</p>;
+    }
+    return (
+      <div>
+        <h1>Your Number is: {num}</h1>
+        {msg}
+      </div>
+    );
+  }
 }
 
-ReactDOM.render(<NumPicker />, document.getElementById('root'));
+ReactDOM.render(<Numpicker />, document.getElementById("root"));
