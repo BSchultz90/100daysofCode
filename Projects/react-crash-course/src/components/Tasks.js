@@ -1,5 +1,15 @@
+import { useState } from "react";
+
 const Tasks = () => {
-  return <div></div>;
+  const [tasks];
+
+  return (
+    <>
+      {tasks.map((task) => (
+        <h3>{task.text}</h3>
+      ))}
+    </>
+  );
 };
 
 export default Tasks;
