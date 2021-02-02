@@ -1,14 +1,20 @@
 import PropTypes from "prop-types";
+import Button from "./Button";
 
 const Header = ({ title }) => {
+  const onClick = () => {
+    console.log("Clickity Click Click");
+  };
+
   return (
-    <header>
+    <header className="header">
       <h1>{title}</h1>
+      <Button color="green" onClick={onClick} text="Add an Item" />
     </header>
   );
 };
 Header.defaultProps = {
-  title: "Hello There",
+  title: "Task Tracker",
 };
 
 Header.propTypes = {

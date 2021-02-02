@@ -8,8 +8,4 @@ function App() {
   );
 }
 
-Header.defaultProps = {
-  title: "Hello There",
-};
-
 export default App;
