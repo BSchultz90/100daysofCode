@@ -1,12 +1,10 @@
-import { useState } from "react";
+import Task from "./Task";
 
-const Tasks = () => {
-  const [tasks];
-
+const Tasks = ({ tasks }) => {
   return (
     <>
       {tasks.map((task) => (
-        <h3>{task.text}</h3>
+        <Task key={task.id} task={task} />
       ))}
     </>
   );
